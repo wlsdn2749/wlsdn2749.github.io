@@ -41,22 +41,17 @@ const today = new Date();
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
+		@apply py-8 px-4 pb-24 bg-gradient-to-b from-gray-200 to-white text-gray-500 text-center;
 	}
+	
 	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
+		@apply flex justify-center gap-4 mt-4;
 	}
+
 	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
+		@apply text-gray-500 hover:text-gray-800 no-underline;
 	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
+
 </style>
+
+
