@@ -1,5 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import ThemeToggler from "../components/ThemeToggler.astro"
 import { SITE_TITLE, SITE_GITHUB, SITE_LINKEDIN, SITE_NOTION_STUDY } from '../consts';
 ---
 
@@ -11,6 +12,7 @@ import { SITE_TITLE, SITE_GITHUB, SITE_LINKEDIN, SITE_NOTION_STUDY } from '../co
 				<span class="sr-only">Goto Blog Main!</span>
 				<svg viewBox="0 0 256 366" aria-hidden="true" width="32" height="32" class="mr-2"
 				><path
+				fill="currentColor"
 				d="M182.022 9.147c2.982 3.702 4.502 8.697 7.543 18.687L256 246.074a276.467 276.467 0 0 0-79.426-26.891L133.318 73.008a5.63 5.63 0 0 0-10.802.017L79.784 219.11A276.453 276.453 0 0 0 0 246.04L66.76 27.783c3.051-9.972 4.577-14.959 7.559-18.654a24.541 24.541 0 0 1 9.946-7.358C88.67 0 93.885 0 104.314 0h47.683c10.443 0 15.664 0 20.074 1.774a24.545 24.545 0 0 1 9.95 7.373"
 				/><path 
 				fill="#ff5d01" 
@@ -53,16 +55,22 @@ import { SITE_TITLE, SITE_GITHUB, SITE_LINKEDIN, SITE_NOTION_STUDY } from '../co
 				></path></svg
 				>
 			</a>
+			<ThemeToggler />
 		</div>
+		
 	</nav>
 </header>
 <style>
 	header {
 		@apply m-0 px-4 bg-white shadow-md shadow-black/5;
 	}
+
+	:global(.dark) header{
+		@apply m-0 px-4 bg-gray-700 shadow-md shadow-black/5
+	}
 	
 	h2 {
-		@apply m-0 text-lg font-bold;
+		@apply m-0 text-lg font-bold dark:text-white;
 	}
 	
 	h2 a,
@@ -75,7 +83,7 @@ import { SITE_TITLE, SITE_GITHUB, SITE_LINKEDIN, SITE_NOTION_STUDY } from '../co
 	}
 	
 	nav a {
-		@apply py-4 px-2 text-black border-b-4 border-transparent no-underline;
+		@apply py-4 px-2 text-black border-b-4 border-transparent no-underline dark:text-white;
 	}
 	
 	nav a.active {

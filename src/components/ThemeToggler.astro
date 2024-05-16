@@ -1,0 +1,83 @@
+<button aria-label="Theme toggler" data-theme-toggle>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" width="32" height="32" stroke-width="1.5"stroke="currentColor"
+    ><path
+    class="sun"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+    /><path
+    class="moon"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+    /></svg>
+</button>
+
+<style>
+    button {
+        @apply cursor-pointer rounded-md border-0 px-2 py-1 transition-all ease-in-out hover:scale-90 active:scale-100;
+    }
+    
+    .sun {
+        @apply opacity-0
+    }
+    
+    :global(.dark) .sun{
+        @apply opacity-100;
+    }
+    
+    :global(.dark) .moon{
+        @apply opacity-0;
+    }
+</style> 
+
+<script>
+    const DARK_THEME_CLASS = "dark";
+    
+    const THEME = "THEME";
+    const DARK = "DARK";
+    const LIGHT = "LIGHT";
+    
+    const toggle = document.querySelector("[data-theme-toggle]");
+    
+    // <html>
+    const rootEl = document.documentElement;
+    
+    const getInitialTheme = () => {
+        const previousTheme = window.localStorage.getItem(THEME);
+        if (previousTheme) {
+            return previousTheme;
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return DARK;
+        }
+        
+        return LIGHT;
+    };
+    
+    const setInitialTheme = (mode: string) => {
+        if (mode === LIGHT) {
+            rootEl.classList.remove(DARK_THEME_CLASS);
+        } else {
+            rootEl.classList.add(DARK_THEME_CLASS);
+        }
+    };
+    
+    // 처음에 실행
+    const initialTheme = getInitialTheme();
+    setInitialTheme(initialTheme);
+    
+    // rootEl is <html>
+    
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            // toggle 메서드는 클래스 리스트에서 특정 클래스가 이미 존재하면 해당 클래스를 제거하고, 그 클래스가 없으면 추가합니다.
+            // 즉, 클래스의 토글(toggle) 동작을 수행합니다.
+            rootEl.classList.toggle(DARK_THEME_CLASS);
+            
+            const theme = rootEl.classList.contains(DARK_THEME_CLASS) ? DARK : LIGHT;
+            
+            window.localStorage.setItem(THEME, theme);
+        });
+    }
+</script>

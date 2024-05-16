@@ -36,18 +36,34 @@ import { SITE_GITHUB, SITE_LINKEDIN, SITE_NOTION_STUDY } from '../consts';
 	</div>
 </footer>
 <style>
-	footer {
-		@apply py-8 px-4 pb-24 bg-gradient-to-b from-gray-200 to-white text-gray-500 text-center;
+	:global(body) {
+		@apply min-h-screen flex flex-col;
 	}
+	
+	:global(main) {
+		@apply flex-grow;
+	}
+	footer {
+		@apply py-8 px-4 pb-8 bg-gradient-to-b from-gray-200 to-white text-gray-500 text-center;
+	}
+	
+	:global(.dark) footer {
+		@apply py-8 px-4 pb-8 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-200 text-center;
+	}
+	
 	
 	.social-links {
 		@apply flex justify-center gap-4 mt-4;
 	}
-
+	
 	.social-links a {
 		@apply text-gray-500 hover:text-gray-800 no-underline;
 	}
 
+	:global(.dark) .social-links a {
+		@apply text-gray-200 hover:text-gray-500 no-underline;
+	}
+	
 </style>
 
 
