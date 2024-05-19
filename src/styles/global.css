@@ -29,7 +29,7 @@ html.dark {
 
 body {
 	/* @apply font-Atkinson m-0 p-0 text-left bg-gradient-to-b from-gray-200 to-white bg-no-repeat bg-[length:100%_600px] break-words text-gray-800 text-[20px] leading-[1.7] dark:text-white; */
-	@apply py-0 px-2 dark:text-white;
+	@apply py-0 px-2 pt-16 dark:text-white;
 }
 
 main {
