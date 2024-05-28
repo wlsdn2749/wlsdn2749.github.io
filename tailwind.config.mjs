@@ -18,6 +18,7 @@ export default {
 			},
 		},
 		fontFamily: {
+			sans: ['Noto Sans KR', 'sans-serif'],
 			Atkinson: ['Atkinson', 'sans-serif'],
 		},
 	},
