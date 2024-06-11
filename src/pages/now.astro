@@ -6,7 +6,7 @@ import Layout from '../layouts/MdOnly.astro';
 	title="Now!"
 	description="지금 현재 Now!"
 	pubDate={new Date('2024-05-28')}
-	updatedDate={new Date('2024-05-28')}
+	updatedDate={new Date('2024-06-11')}
 	heroImage="/blog-placeholder-about.jpg"
 >
 
@@ -20,6 +20,10 @@ import Layout from '../layouts/MdOnly.astro';
 
     .block li {
         @apply my-2 ml-2;
+    }
+
+    .block ul {
+        @apply list-disc ml-4;
     }
 
     .block blockquote{
@@ -44,13 +48,7 @@ import Layout from '../layouts/MdOnly.astro';
         <hr /> 
         <p>
             ML 엔지니어 포지션으로 구직하면서 그 동안 하지 못했던, 만들고 싶었던 것들을 만들고 있습니다.
-            
-
-            <p>
-                <b>2024.03</b>
-                <li>Whisper를 활용한 자막 번역 프로젝트 (시작)</li>
-            </p>
-            
+                        
             <p>
                 <b>2024.04</b>
                 <li>Whisper를 활용한 자막 번역 프로젝트 (종료)</li>
@@ -62,6 +60,18 @@ import Layout from '../layouts/MdOnly.astro';
                 <b>2024.05</b>
                 <li>슈팅게임 AI Agent 만들기 (종료)</li>
                 <li>Breakout AI Agent 만들기 (시작)</li>
+            </p>
+
+            <p>
+                <b>2024.06</b>
+                <li>Breakout AI Agent 만들기 (진행중)</li>
+                <li>
+                    <a href="https://github.com/wlsdn2749/hotdeal-crawling-project">
+                        핫딜 그룹핑 프로젝트 
+                    </a>
+                    (시작) ~ 6/22 (종료 예정)
+                </li>
+                    
             </p>
 
             <blockquote>
@@ -83,22 +93,20 @@ import Layout from '../layouts/MdOnly.astro';
             <p>
                 <b>PC</b>
                 <li>League of Legend</li>
-                <li>FC Online</li>
+                <li>명조 워더링 웨이브 <b>(3rd)</b></li>
+                <li>붕괴 스타레일</li>
             </p>
             
             <p>
                 <b>Mobile</b>
                 <li>작혼: 리치 마작</li>
                 <li>하스스톤 <b>(2nd)</b></li>
-                <li>명조 워더링 웨이브 <b>(3rd)</b></li>
-                <li>붕괴 스타레일</li>
+                
             </p>
 
             <p>
                 <b>Steam</b>
                 <li> PUBG: 배틀그라운드 <b>(1st)</b></li>
-                <li>Hades II</li>
-                <li>철권 8</li>
             </p>
 
             <blockquote>
@@ -158,6 +166,26 @@ import Layout from '../layouts/MdOnly.astro';
         </p>
     </div>
 
+    <!-- 조잘조잘 -->
+    <div class="block">
+        <div class="mb-2">
+            <h4 class="inline">
+                <strong>조잘조잘... </strong>
+
+                <hr/>
+            </h4>
+            <p>
+                <ul>
+                    <li>YBM 상품권 100만원 아직 남아있는데.. 일본어/영어 회화 신청 해야되는데.. 시작이 반인데... </li>
+                    <li>최근에 여러 Tech 기술 찍먹 시도 해보고 있습니다. </li>
+                    <ol class="list-decimal">
+                        <li>이 블로그를 만들 때 사용한 <a href="https://astro.build/"> Astro </a></li>
+                        <li>MySQL, Sqlite 없이 간단하게 사용하기 좋은 <a href="https://duckdb.org/">DuckDB</a></li>
+                    </ol>
+                </ul>
+            </p>
+        </div>
+    </div>
 </body>
 
 </Layout>
