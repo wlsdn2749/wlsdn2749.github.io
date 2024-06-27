@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro'
+
+const posts = (await getCollection('blog')).sort(
+(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+<body>
+    <style>
+        .blog-post-list {
+            @apply w-full max-w-[960px] mx-auto ;
+        }
+        .blog-post-list ul {
+            @apply list-none m-0 p-0;
+        }
+        .blog-post-item {
+            @apply w-full mb-8 pb-8 border-b border-gray-200;
+        }
+        .blog-post-content {
+            @apply flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-4;
+        }
+        .image-container {
+            @apply relative w-full md:w-1/3 overflow-hidden rounded-lg shadow-md;
+        }
+        .blog-post-image {
+            @apply w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105;
+        }
+        .blog-post-video-icon {
+            @apply absolute top-2 right-2 bg-black bg-opacity-50 rounded-full p-1;
+        }
+        .blog-post-text {
+            @apply flex-1 break-words;
+        }
+        .title-content {
+            @apply text-2xl font-bold mb-2 text-gray-800 hover:text-blue-600 transition-colors duration-300;
+        }
+        .blog-post-meta {
+            @apply flex items-center text-sm text-gray-500 mb-2;
+        }
+        .blog-post-summary {
+            @apply text-gray-700 text-sm;
+        }
+    </style>
+</body>
+
+<main class="blog-post-list">
+    <ul>
+      {posts.map((post) => (
+        <li class="blog-post-item">
+          <div class="blog-post-content">
+            <div class="image-container">
+              <img src={post.data.heroImage} alt={post.data.title} class="blog-post-image" />
+            </div>
+            <div class="blog-post-text">
+              <h2 class="title-content">{post.data.title}</h2>
+              <div class="blog-post-meta">
+                <FormattedDate date={post.data.pubDate} />
+              </div>
+              <p class="blog-post-summary">{post.data.description}</p>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+</main>
+<!-- <ul>
+    {
+        posts.map((post) => (
+        <li>
+            <a href={`/blog/${post.slug}/`}>
+                <img src={post.data.heroImage} alt="" />
+                <h4 class="title">{post.data.title}</h4>
+                <p class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                </p>
+            </a>
+        </li>
+        ))
+    }/
+</ul> -->

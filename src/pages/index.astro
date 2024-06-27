@@ -3,6 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import HeaderLink from '../components/HeaderLink.astro';
+import Categories from '../components/Categories.astro';
+import BlogPostList from '../components/BlogPostList.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -13,18 +15,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<div class="bg-[#222845] flex justify-center items-center overflow-hidden object-contain rounded-xl mx-auto mt-6 max-w-[1050px] h-20 cursor-default">
+		<div class="bg-[#222845] flex justify-center items-center overflow-hidden object-contain rounded-xl mx-auto mt-6 max-w-[960px] h-30 cursor-default">
 			<img 
-				src="https://images.unsplash.com/photo-1491071676596-825e11fccef5?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-				alt="A wide landscape"
+				src="/theme/main_banner.png"
+				alt="Serotina Blog Banner"
 			/>
 		</div>
 		
 		<main>
-			<h2>🧑‍🚀 Hello, 여행자!</h2>
+			<BlogPostList />
+			<!-- <Categories /> -->
+			<!-- <h2>🧑‍🚀 Hello, 여행자!</h2>
 			<p class="my-4">
 				<strong>지금은 <HeaderLink href="/now">Now</HeaderLink> Page만 잘 작동해요!</strong>
-			</p>
+			</p> -->
 		</main>
 		<Footer />
 	</body>

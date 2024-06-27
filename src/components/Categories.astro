@@ -1,0 +1,25 @@
+---
+import HeaderLink from './HeaderLink.astro';
+---
+
+<nav>
+    <div class="categories-links">
+        <HeaderLink href="/">전체</HeaderLink>
+        <HeaderLink href="/blog">블로그</HeaderLink>
+        <hr />
+    </div>
+</nav>
+
+<style>
+    nav {
+		@apply flex items-center justify-between;
+	}
+	
+	nav a {
+		@apply py-4 px-2 text-black border-b-4 border-transparent no-underline dark:text-white;
+	}
+	
+	nav a.active {
+		@apply no-underline border-b-2 border-b-slate-500;
+	}
+</style>

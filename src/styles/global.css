@@ -71,7 +71,7 @@ body {
 }
 
 main {
-	@apply w-[720px] max-w-[calc(100%-2em)] mx-auto py-12 px-4;
+	@apply w-[1150px] max-w-[calc(100%-2em)] mx-auto py-12;
 }
 
 h1, h2, h3, h4, h5, h6 {

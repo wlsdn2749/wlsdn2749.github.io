@@ -17,32 +17,21 @@ const posts = (await getCollection('blog')).sort(
 	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	<style>
 		main {
-			@apply w-[960px];
+			@apply w-full max-w-[960px] mx-auto px-4;
 		}
 		
 		ul {
-			@apply flex flex-wrap gap-8 list-none m-0 p-0;
+			@apply list-none m-0 p-0;
 		}
 		
 		ul li {
-			@apply w-[calc(50%-1rem)];
+			@@apply w-full mb-8 pb-8 border-b border-gray-200;
 		}
 		
 		ul li * {
 			@apply no-underline transition-all duration-200 ease-in-out;
 		}
 		
-		ul li:first-child {
-			@apply w-full mb-4 text-center;
-		}
-		
-		ul li:first-child img {
-			@apply w-full;
-		}
-		
-		ul li:first-child .title {
-			@apply text-[2.369rem];
-		}
 		
 		ul li img {
 			@apply mb-2 rounded-xl;
@@ -90,7 +79,7 @@ const posts = (await getCollection('blog')).sort(
 </head>
 <body>
 	<Header />
-	<main>
+	<main class="">
 		<section>
 			<ul>
 				{
