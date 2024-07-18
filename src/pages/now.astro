@@ -6,186 +6,141 @@ import Layout from '../layouts/MdOnly.astro';
 	title="Now!"
 	description="지금 현재 Now!"
 	pubDate={new Date('2024-05-28')}
-	updatedDate={new Date('2024-06-11')}
+	updatedDate={new Date('2024-07-18')}
 	heroImage="/blog-placeholder-about.jpg"
 >
 
 <style>
-    .block {
+    .content-block {
         @apply my-10;
     }
-    .block p {
-        @apply mt-2 mb-2 leading-normal;
+    .content-block h2 {
+        @apply text-xl font-bold mb-2;
     }
-
-    .block li {
-        @apply my-2 ml-2;
+    .content-block h3 {
+        @apply text-lg font-semibold mt-4 mb-2;
     }
-
-    .block ul {
-        @apply list-disc ml-4;
+    .content-block p, .content-block li {
+        @apply my-2 leading-normal;
     }
-
-    .block blockquote{
-        @apply text-base text-gray-500 italic border-l-4 border-gray-400 pl-2;
+    .content-block ul {
+        @apply list-disc ml-6;
     }
-
+    .content-block ol {
+        @apply list-decimal ml-6;
+    }
+    .content-block blockquote {
+        @apply text-base text-gray-500 italic border-l-4 border-gray-400 pl-4 my-4;
+    }
 </style>
 
-<body>
-    <p>
-        지금 현재 무엇을 하고 있는지, 꾸준히 기록하고 업데이트 합니다.
-    </p>
+<article>
+    <p>지금 현재 무엇을 하고 있는지, 꾸준히 기록하고 업데이트 합니다.</p>
 
-    <!-- 최근 ㄹ황 -->
-    <div class="block">
-        <div class="mb-2">
-            <h4 class="inline">
-                <strong>요즘 저는? </strong>
-            </h4>
-                <h5 class="inline">(최근 3개월)</h5>
-        </div>
-        <hr /> 
-        <p>
-            ML 엔지니어 포지션으로 구직하면서 그 동안 하지 못했던, 만들고 싶었던 것들을 만들고 있습니다.
-                        
-            <p>
-                <b>2024.04</b>
-                <li>Whisper를 활용한 자막 번역 프로젝트 (종료)</li>
-                <li>슈팅게임 AI Agent 만들기 (시작)</li>
-            </p>
+    <section class="content-block">
+        <h2>요즘 저는? <small>(최근 3개월)</small></h2>
+        <hr>
+        <p>ML 엔지니어 포지션으로 구직하면서 그 동안 하지 못했던, 만들고 싶었던 것들을 만들고 있습니다.</p>
 
+        <h3>2024.05</h3>
+        <ul>
+            <li>슈팅게임 AI Agent 만들기 (종료)</li>
+            <li>Breakout AI Agent 만들기 (시작)</li>
+        </ul>
 
-            <p>
-                <b>2024.05</b>
-                <li>슈팅게임 AI Agent 만들기 (종료)</li>
-                <li>Breakout AI Agent 만들기 (시작)</li>
-            </p>
+        <h3>2024.06</h3>
+        <ul>
+            <li>Breakout AI Agent 만들기 (진행중)</li>
+            <li><a href="https://github.com/wlsdn2749/hotdeal-crawling-project">핫딜 그룹핑 프로젝트</a> (시작) ~ 6/22 (종료 예정)</li>
+        </ul>
 
-            <p>
-                <b>2024.06</b>
-                <li>Breakout AI Agent 만들기 (진행중)</li>
-                <li>
-                    <a href="https://github.com/wlsdn2749/hotdeal-crawling-project">
-                        핫딜 그룹핑 프로젝트 
-                    </a>
-                    (시작) ~ 6/22 (종료 예정)
-                </li>
-                    
-            </p>
+        <blockquote>AI Agent의 경우, Unity ML-Agent를 주력으로 사용하고 있습니다.</blockquote>
 
-            <blockquote>
-                AI Agent의 경우, Unity ML-Agent를 주력으로 사용하고 있습니다.
-            </blockquote>
-        </p>
-    </div>
+        <h3>2024.07</h3>
+        <ul>
+            <li>Breakout AI Agent 만들기 (진행중)</li>
+            <li><a href="https://hotdeal.gyu.be/">핫딜 그룹핑 프로젝트 배포</a> (완료)</li>
+            <li>Unity YOLOv8를 이용한 객체탐지 게임 제작 프로젝트 (진행중)</li>
+        </ul>
 
-    <!-- 취미! -->
-    <div class="block">
-        <div class="mb-2">
-            <h4 class="inline">
-            <strong>그래서 남는시간에는 뭐하는데? </strong>
-        </div>
-        <hr /> 
-        <p>
-            대부분의 취미생활을 게임으로 보내고 있습니다.
-            
-            <p>
-                <b>PC</b>
-                <li>League of Legend</li>
-                <li>명조 워더링 웨이브 <b>(3rd)</b></li>
-                <li>붕괴 스타레일</li>
-            </p>
-            
-            <p>
-                <b>Mobile</b>
-                <li>작혼: 리치 마작</li>
-                <li>하스스톤 <b>(2nd)</b></li>
-                
-            </p>
+        <blockquote>Unity 6와 Sentis를 주력으로 사용하고 있습니다.</blockquote>
+    </section>
 
-            <p>
-                <b>Steam</b>
-                <li> PUBG: 배틀그라운드 <b>(1st)</b></li>
-            </p>
+    <section class="content-block">
+        <h2>그래서 남는시간에는 뭐하는데?</h2>
+        <hr>
+        <p>대부분의 취미생활을 게임으로 보내고 있습니다.</p>
 
-            <blockquote>
-                적어보니 이렇게 많을줄;; 이정도면 조금 줄이긴 해야겠네요..
-            </blockquote>
-        </p>
-    </div>
-    
-    <!-- 목표 -->
-    <div class="block">
-        <div class="mb-2">
-            <h4 class="inline">
-                <strong>2024년도 목표가 뭐야?</strong>
-        </div>
-        <hr /> 
-        <p>
-            큰 목표인 
-            <strong>
-                <i>
-                    Be a developer makes touching and romatic programs like Human/Game AI
-                </i>
-            </strong>
-            를 달성하기 위해서 작은 목표부터 차근차근 달성해나가려고 합니다.
+        <h3>PC</h3>
+        <ul></ul>
 
+        <h3>Mobile</h3>
+        <ul>
+            <li>하스스톤 </li>
+        </ul>
+
+        <h3>Steam</h3>
+        <ul>
+            <li>
+                Once Human
+                <p>
+                    요즘 중국의 게임 개발사인 NetEase가 만든 게임인 Once Human에 푹 빠져 지내고 있습니다. 
+                    개인적으로 이런 Crafting, Root Shooter 장르를 좋아했나봅니다. 개인적으로 The Day Before 같은 게임 분위기와 장르를 기대했는데
+                    생각보다 제 입맛에 맞았습니다. 시간가는줄 모르고 하고있네요 ㅎㅎ..
+                </p>
+            </li>
+            <li>PUBG: 배틀그라운드 </li>
+        </ul>
+
+        
+    </section>
+
+    <section class="content-block">
+        <h2>2024년도 목표가 뭐야?</h2>
+        <hr>
+        <p>큰 목표인 <strong><em>Be a developer makes touching and romatic programs like Human/Game AI</em></strong>를 달성하기 위해서 작은 목표부터 차근차근 달성해나가려고 합니다.</p>
+
+        <ul>
             <li>만들고 있는 게임 포함하여 3개의 게임을 만들고, ML-Agent로 Training 하기</li>
-            <li>슈팅게임과, Breakout 프로젝트 튜토리얼 포스트 작성하기 </li>
-            <li>
-                <a href="https://github.com/yingchengyang/Reinforcement-Learning-Papers">
-                    강화학습 Key Papers
-                </a>
-                Model Free RL의 Classic Methods 위주로 모두 읽기
-            </li>
-            
-            <li>
-                <a href="https://leetcode.com/problemset/all-code-essentials/?listId=wpwgkgt&page=1&difficulty=MEDIUM">
-                    LeetCode Top Interview Questions - Medium 
-                </a>모두 풀기
-            </li>
-        </p>
-    </div>
+            <li>슈팅게임과, Breakout 프로젝트 튜토리얼 포스트 작성하기</li>
+            <li><a href="https://github.com/yingchengyang/Reinforcement-Learning-Papers">강화학습 Key Papers</a> Model Free RL의 Classic Methods 위주로 모두 읽기</li>
+            <li><a href="https://leetcode.com/problemset/all-code-essentials/?listId=wpwgkgt&page=1&difficulty=MEDIUM">LeetCode Top Interview Questions - Medium</a> 모두 풀기</li>
+        </ul>
+    </section>
 
-    <!-- 하고 싶은거-->
-    <div class="block">
-        <div class="mb-2">
-            <h4 class="inline">
-                <strong>하고 싶은게 있다면?</strong>
-            </h4>
-        </div>
-        <hr /> 
-        <p>
-            하고싶은것이 생각날때마다 그냥 막 적고 있습니다.
-            <li>
-                저번에 갔던 
-                <a href="https://www.youtube.com/watch?app=desktop&v=HtkSArsSsZQ">RL 세미나</a>
-                가 너무 인상깊었어서 기회가 있다면 다시 한 번 가고싶다..! 
-            </li>
-        </p>
-    </div>
+    <section class="content-block">
+        <h2>하고 싶은게 있다면?</h2>
+        <hr>
+        <p>하고싶은것이 생각날때마다 그냥 막 적고 있습니다.</p>
+        <ul>
+            <li>저번에 갔던 <a href="https://www.youtube.com/watch?app=desktop&v=HtkSArsSsZQ">RL 세미나</a>가 너무 인상깊었어서 기회가 있다면 다시 한 번 가고싶다..!</li>
+            <li>콘서트도 한 번 가보고 싶어요 </li>
+        </ul>
+    </section>
 
-    <!-- 조잘조잘 -->
-    <div class="block">
-        <div class="mb-2">
-            <h4 class="inline">
-                <strong>조잘조잘... </strong>
-
-                <hr/>
-            </h4>
-            <p>
-                <ul>
-                    <li>YBM 상품권 100만원 아직 남아있는데.. 일본어/영어 회화 신청 해야되는데.. 시작이 반인데... </li>
-                    <li>최근에 여러 Tech 기술 찍먹 시도 해보고 있습니다. </li>
-                    <ol class="list-decimal">
-                        <li>이 블로그를 만들 때 사용한 <a href="https://astro.build/"> Astro </a></li>
-                        <li>MySQL, Sqlite 없이 간단하게 사용하기 좋은 <a href="https://duckdb.org/">DuckDB</a></li>
-                    </ol>
-                </ul>
-            </p>
-        </div>
-    </div>
-</body>
+    <section class="content-block">
+        <h2>조잘조잘...</h2>
+        <hr>
+        <ul>
+            <li>YBM 상품권 100만원 아직 남아있는데.. 일본어/영어 회화 신청 해야되는데.. 시작이 반인데...</li>
+            <li>최근에 여러 Tech 기술 찍먹 시도 해보고 있습니다.</li>
+            <ol>
+                <li>이 블로그를 만들 때 사용한 <a href="https://astro.build/">Astro</a></li>
+                <li>MySQL, Sqlite 없이 간단하게 사용하기 좋은 <a href="https://duckdb.org/">DuckDB</a></li>
+            </ol>
+            <li>여러 Python 책들 읽고 있습니다</li>
+            <ol>
+                <li><a href="https://www.yes24.com/Product/Goods/94197582">파이썬 코딩의 기술 [Effective Python 2nd]</a></li>
+                <li><a href="https://www.yes24.com/Product/Goods/68835284">슬기로운 파이썬 트릭 [Python Tricks]</a></li>
+            </ol>
+            <li>브라우저 Arc를 사용해보고 있습니다. 원래는 Mac OS만 지원하다 최근에 Windows를 지원하더라구요. 주로 쓰는 기능은 2가지 입니다</li>
+            <ol>
+                <li>Workspace 기능: Space별로 사이트를 북마크, 그룹핑이 가능합니다</li>
+                <li>Window Split, Music Player: UI가 괜찮더라구요 사용하기 좋았습니다</li>
+            </ol>
+        </ul>
+        
+    </section>
+</article>
 
 </Layout>
