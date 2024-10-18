@@ -41,13 +41,23 @@ const posts = (await getCollection('blog')).sort(
         .blog-post-summary {
             @apply text-gray-700 text-sm;
         }
+        .blog-post-link {
+            @apply block text-inherit no-underline;
+        }
+        .blog-post-link:hover .title-content {
+            @apply text-blue-600;
+        }
+        .blog-post-link:hover .blog-post-image {
+            @apply scale-105;
+        }
     </style>
 </body>
 
 <main class="blog-post-list">
-    <ul>
-      {posts.map((post) => (
-        <li class="blog-post-item">
+  <ul>
+    {posts.map((post) => (
+      <li class="blog-post-item">
+        <a href={`/blog/${post.slug}/`} class="blog-post-link">
           <div class="blog-post-content">
             <div class="image-container">
               <img src={post.data.heroImage} alt={post.data.title} class="blog-post-image" />
@@ -60,22 +70,8 @@ const posts = (await getCollection('blog')).sort(
               <p class="blog-post-summary">{post.data.description}</p>
             </div>
           </div>
-        </li>
-      ))}
-    </ul>
+        </a>
+      </li>
+    ))}
+  </ul>
 </main>
-<!-- <ul>
-    {
-        posts.map((post) => (
-        <li>
-            <a href={`/blog/${post.slug}/`}>
-                <img src={post.data.heroImage} alt="" />
-                <h4 class="title">{post.data.title}</h4>
-                <p class="date">
-                    <FormattedDate date={post.data.pubDate} />
-                </p>
-            </a>
-        </li>
-        ))
-    }/
-</ul> -->

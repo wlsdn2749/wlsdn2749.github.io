@@ -67,7 +67,7 @@ html.dark {
 
 body {
 	/* @apply font-Atkinson m-0 p-0 text-left bg-gradient-to-b from-gray-200 to-white bg-no-repeat bg-[length:100%_600px] break-words text-gray-800 text-[20px] leading-[1.7] dark:text-white; */
-	@apply py-0 px-2 pt-16 dark:text-white;
+	@apply py-0 px-2 pt-16 text-[18px] dark:text-white;
 }
 
 main {
@@ -106,7 +106,11 @@ strong, b {
 }
 
 a {
-	@apply text-accent hover:text-accent;
+    @apply text-blue-600 no-underline; /* 링크 색상과 밑줄 제거 */
+}
+
+a:hover {
+    @apply underline; /* 마우스를 올렸을 때 밑줄 추가 */
 }
 
 p {
@@ -180,6 +184,14 @@ li {
 	clip-path: inset(50%);
 }
 
-/* .sr-only {
-	@apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0 clip-[rect(1px,1px,1px,1px)] clip-path-[inset(50%)];
-} */
+/* Style checkboxes */
+input[type="checkbox"] {
+    @apply mr-2; /* Text와 Box사이에 마진 추가*/
+    transform: scale(1.2); /* box size 1.2배 증가 */
+}
+
+/* Change cursor for checkboxes */
+input[type="checkbox"]:hover {
+    @apply cursor-pointer;
+}
+
